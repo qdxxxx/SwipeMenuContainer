@@ -58,8 +58,8 @@ public class SwipeMenuLayout extends ViewGroup {
         mMaxVelocity = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
     }
 
-    private int mExpandLimit;       //展开的阈值
-    private int mCloseLimit;        //关闭的阈值
+    private int mExpandLimit;//展开的阈值
+    private int mCloseLimit;//关闭的阈值
     private float expandRatio = 0.3f;
     private float closeRatio = 0.7f;
 

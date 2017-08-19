@@ -68,15 +68,15 @@
 ### 方法及属性介绍
 ---
 
-name                   | format         |中文解释
-----                   |------          |----
-setDrawByTouch         | boolean  	|触摸显示的字母圆的y轴中心点与手指触摸相同
-setCircleRadius        | float    	|触摸显示的字母圆的半径
-setCircleDuration      | integer   	|触摸显示的字母圆显示时间
-setCircleColor         | integer	|圆的颜色
-setIndexBarWidth       | integer 	|字母导航栏的宽度
-setIndexBarHeightRatio | float          |字母导航栏高度相对父高度占比
-getIndexBar	       |                |获取字母导航栏
+name                   | format                  |中文解释
+----                   |------                   |----
+isLeftMenu             | boolean  		 |菜单是否在内容左边（如果在左边，则右滑）
+enableParentLongClick  | boolean    		 |允许父类长按（此时内容就会被拦截down事件）                     
+expandRatio            | float   		 |菜单能够自动打开的阈值
+expandDuration 	       | integer     		 |菜单展开动画时间
+closeRatio             | float	      	         |菜单能够自动关闭的阈值
+closeDuration          | integer 		 |菜单关闭动画时间
+autoCloseType	       | enum(none,smooth,quick) |点击menu菜单内容（删除，编辑等）自动关闭。
 
 <br/>
 

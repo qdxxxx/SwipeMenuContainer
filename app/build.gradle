@@ -1,10 +1,10 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
-//        applicationId "qdx.swipemenucontainer"
+        applicationId "qdx.swipemenucontainer"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
@@ -29,8 +29,8 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
 
-//    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
-//    compile 'com.github.bumptech.glide:glide:4.0.0'
-//    compile 'de.hdodenhof:circleimageview:2.1.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 //    compile 'com.android.support:recyclerview-v7:25.3.1'
 }

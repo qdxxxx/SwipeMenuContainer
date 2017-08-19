@@ -10,7 +10,7 @@
  [https://fir.im/6q2m]( https://fir.im/6q2m)
  
  
- 借鉴参考大神的[SwipeDelMenuLayout]( https://github.com/mcxtzhang/SwipeDelMenuLayout
+ 借鉴参考大神的[SwipeDelMenuLayout](https://github.com/mcxtzhang/SwipeDelMenuLayout）
  
  
  

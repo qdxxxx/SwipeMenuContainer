@@ -47,7 +47,7 @@
 ```
 <br/>
 
-### 兼容超强的BaseAdapter[BaseRecyclerViewAdapterHelper]( https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
+### 兼容超强的[BaseRecyclerViewAdapterHelper]( https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 ---
 
 #### 普通RecyclerView item.

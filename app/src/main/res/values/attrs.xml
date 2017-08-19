@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="isLeftMenu" format="boolean" />
+        <attr name="enableParentLongClick" format="boolean" />
+
+        <attr name="expandRatio" format="float" />
+        <attr name="closeRatio" format="float" />
+
+        <attr name="closeDuration" format="integer" />
+        <attr name="expandDuration" format="integer" />
+
+
+        <attr name="autoCloseType">
+            <flag name="none" value="0" />
+            <flag name="smooth" value="1" />
+            <flag name="quick" value="2" />
+        </attr>
+
+    </declare-styleable>
+</resources>

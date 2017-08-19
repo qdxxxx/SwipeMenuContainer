@@ -40,7 +40,7 @@
         ...
         />
 ```
-
+<br/>
 
 ### 兼容超强的BaseAdapter[BaseRecyclerViewAdapterHelper]( https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 ---
@@ -48,17 +48,19 @@
 #### 普通RecyclerView item.
  ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/normal.gif)
  
+ <br/>
  ##### 多种itemType
   ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/mulit.gif)
   
+  <br/>
 #### 长按拖拽
 需要设置```enableParentLongClick(tren)```允许父类拖拽.
 
    ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/drag.gif)
-   
+   <br/>
 #### 多级item
    ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/expandable.gif)
- 
+ <br/>
  
 
 ### 方法及属性介绍

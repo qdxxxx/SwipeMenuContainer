@@ -49,17 +49,19 @@
  ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/normal.gif)
  
  <br/>
- ##### 多种itemType
-  ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/mulit.gif)
+ 
+#### 多种itemType
+![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/mulit.gif)
+<br/>
   
-  <br/>
 #### 长按拖拽
 需要设置```enableParentLongClick(tren)```允许父类拖拽.
 
-   ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/drag.gif)
-   <br/>
+![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/drag.gif)
+<br/>
+   
 #### 多级item
-   ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/expandable.gif)
+![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/expandable.gif)
  <br/>
  
 

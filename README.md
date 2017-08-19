@@ -1,11 +1,7 @@
 # SwipeMenuContainer
 [![](https://www.jitpack.io/v/qdxxxx/SwipeMenuContainer.svg)](https://www.jitpack.io/#qdxxxx/SwipeMenuContainer)
 
-仿QQ左滑动弹出菜单的布局.
-
-借鉴[SwipeDelMenuLayout]( https://github.com/mcxtzhang/SwipeDelMenuLayout)
-
-兼容超强的BaseAdapter[BaseRecyclerViewAdapterHelper]( https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
+仿QQ向左滑动弹出菜单的布局.
 
  ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/demo.gif)
  
@@ -44,3 +40,23 @@
         ...
         />
 ```
+
+
+#### 兼容超强的BaseAdapter[BaseRecyclerViewAdapterHelper]( https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
+
+##### 普通RecyclerView item.
+ ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/normal.gif)
+ 
+ ##### 多种itemType
+  ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/mulit.gif)
+  
+##### 长按拖拽
+   ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/drag.gif)
+   
+##### 多级item
+   ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/expandable.gif)
+ 
+
+
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:qdx="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <qdx.swipemenucontainer.SwipeMenuLayout
+        android:id="@+id/item_layout_swip"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+
+        qdx:autoCollapseType="smooth"
+        qdx:isLeftMenu="false">
+
+
+        <LinearLayout
+            android:id="@+id/item_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/item_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/item_tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    tools:text="雷军" />
+
+                <TextView
+                    android:id="@+id/item_tv_subTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="#808080"
+                    android:textSize="15sp"
+                    tools:text="how are you?" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_tv_top"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:background="#c7c7cd"
+            android:gravity="center"
+            android:onClick="btn_del"
+            android:text="置顶"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/item_tv_edit"
+            android:layout_width="85dp"
+            android:layout_height="70dp"
+            android:background="#ff9d00"
+            android:gravity="center"
+            android:onClick="btn_edit"
+            android:text="编辑"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/item_tv_del"
+            android:layout_width="85dp"
+            android:layout_height="70dp"
+            android:background="#ff3a30"
+            android:gravity="center"
+            android:onClick="btn_del"
+            android:text="删除"
+            android:textColor="#fff" />
+
+
+    </qdx.swipemenucontainer.SwipeMenuLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eceded" />
+</LinearLayout>

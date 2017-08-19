@@ -46,7 +46,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.MyViewHolder> {
             @Override
             public void onClick(View view) {
 
-//                holder.swipeMenuLayout.quickClose();
+//                holder.swipeMenuLayout.collapseInstant();
                 list.remove(position);
                 notifyDataSetChanged();
             }
@@ -61,14 +61,14 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.MyViewHolder> {
                 notifyDataSetChanged();
 
 
-//                holder.swipeMenuLayout.quickClose();
+//                holder.swipeMenuLayout.collapseInstant();
             }
         });
         holder.view_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-//                holder.swipeMenuLayout.smoothClose();
+//                holder.swipeMenuLayout.smoothCollapse();
                 Toast.makeText(holder.itemView.getContext(), "编辑", Toast.LENGTH_SHORT).show();
 
             }

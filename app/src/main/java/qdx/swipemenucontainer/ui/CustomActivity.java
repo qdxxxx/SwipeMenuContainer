@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import qdx.swipemenucontainer.R;
+import qdx.swipemenucontainer.SwipeMenuLayout;
 
 public class CustomActivity extends AppCompatActivity {
 
@@ -29,22 +30,7 @@ public class CustomActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
     }
 
     public void btn_del(View view) {

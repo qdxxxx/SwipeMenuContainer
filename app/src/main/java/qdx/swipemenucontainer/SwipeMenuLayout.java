@@ -35,20 +35,20 @@ public class SwipeMenuLayout extends ViewGroup {
         int count = ta.getIndexCount();
         for (int i = 0; i < count; i++) {
             int attr = ta.getIndex(i);
-            if (attr == R.styleable.SwipeMenuLayout_autoCloseType) {
-                AUTO_CLOSE_TYPE = ta.getInt(attr, AUTO_CLOSE_NONE);
+            if (attr == R.styleable.SwipeMenuLayout_autoCollapseType) {
+                AUTO_COLLAPSE_TYPE = ta.getInt(attr, AUTO_COLLAPSE_NONE);
             } else if (attr == R.styleable.SwipeMenuLayout_isLeftMenu) {
                 isLeftMenu = ta.getBoolean(attr, true);
             } else if (attr == R.styleable.SwipeMenuLayout_enableParentLongClick) {
                 enableParentLongClick = ta.getBoolean(attr, false);
             } else if (attr == R.styleable.SwipeMenuLayout_expandRatio) {
                 expandRatio = ta.getFloat(attr, 0.3f);
-            } else if (attr == R.styleable.SwipeMenuLayout_closeRatio) {
-                closeRatio = 1 - ta.getFloat(attr, 0.3f);
+            } else if (attr == R.styleable.SwipeMenuLayout_collapseRatio) {
+                collapseRatio = 1 - ta.getFloat(attr, 0.3f);
             } else if (attr == R.styleable.SwipeMenuLayout_expandDuration) {
                 expandDuration = ta.getInt(attr, 150);
-            } else if (attr == R.styleable.SwipeMenuLayout_closeDuration) {
-                closeDuration = ta.getInt(attr, 150);
+            } else if (attr == R.styleable.SwipeMenuLayout_collapseDuration) {
+                collapseDuration = ta.getInt(attr, 150);
             }
         }
         ta.recycle();
@@ -59,12 +59,12 @@ public class SwipeMenuLayout extends ViewGroup {
     }
 
     private int mExpandLimit;//展开的阈值
-    private int mCloseLimit;//关闭的阈值
+    private int mCollapseLimit;//关闭的阈值
     private float expandRatio = 0.3f;
-    private float closeRatio = 0.7f;
+    private float collapseRatio = 0.7f;
 
     private int expandDuration = 150;
-    private int closeDuration = 150;
+    private int collapseDuration = 150;
 
     private boolean isLeftMenu = true;     //左侧为菜单
 
@@ -83,11 +83,11 @@ public class SwipeMenuLayout extends ViewGroup {
 
     private boolean enableParentLongClick = false;//拦截子类的点击事件，给父类享用
 
-    private final int AUTO_CLOSE_NONE = 0;
-    private final int ATUO_CLOSE_SMOOTH = 1;//点击展开菜单后自动顺滑关闭
-    private final int ATUO_CLOSE_QUICK = 2;//点击展开菜单后自动快速关闭
+    public static final int AUTO_COLLAPSE_NONE = 0;
+    public static final int ATUO_COLLAPSE_SMOOTH = 1;//点击展开菜单后自动顺滑关闭
+    public static final int ATUO_COLLAPSE_QUICK = 2;//点击展开菜单后自动快速关闭
 
-    private int AUTO_CLOSE_TYPE;//菜单展开后，点击menu 默认不处理
+    private int AUTO_COLLAPSE_TYPE;//菜单展开后，点击menu 默认不处理
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -115,7 +115,7 @@ public class SwipeMenuLayout extends ViewGroup {
         }
 
         mExpandLimit = (int) (mWidthofMenu * expandRatio);
-        mCloseLimit = (int) (mWidthofMenu * closeRatio);
+        mCollapseLimit = (int) (mWidthofMenu * collapseRatio);
         setMeasuredDimension(widthOfContent, heightOfContent);
     }
 
@@ -174,7 +174,7 @@ public class SwipeMenuLayout extends ViewGroup {
 
                 if (sSwipeMenuLayout != null) {//判断一下是否有Menu已经开启过了
                     if (sSwipeMenuLayout != this) {
-                        sSwipeMenuLayout.smoothClose();
+                        sSwipeMenuLayout.smoothCollapse();
                         sIsTouching = false;
 
                         getParent().requestDisallowInterceptTouchEvent(true);//如果已经有menu打开，不让父类拦截down事件
@@ -252,20 +252,20 @@ public class SwipeMenuLayout extends ViewGroup {
                         if (-getScrollX() > mExpandLimit || (velocityX > 1000 && isInterceptParent)) {
                             smoothExpand();
                         } else {
-                            smoothClose();
+                            smoothCollapse();
                         }
                     } else {//已经展开的
-                        if (-getScrollX() < mCloseLimit || (velocityX < -1000 && isInterceptParent)) {
-                            smoothClose();
+                        if (-getScrollX() < mCollapseLimit || (velocityX < -1000 && isInterceptParent)) {
+                            smoothCollapse();
                         } else {
                             smoothExpand();
                         }
 
                         if (isClickEvent) {//如果是单击事件
                             if (ev.getX() > -getScrollX()) {
-                                smoothClose();
+                                smoothCollapse();
                             } else {
-                                autoClose();
+                                autoCollapse();
                             }
                         }
 
@@ -276,20 +276,20 @@ public class SwipeMenuLayout extends ViewGroup {
                         if (getScrollX() > mExpandLimit || (velocityX < -1000 && isInterceptParent)) {
                             smoothExpand();
                         } else {
-                            smoothClose();
+                            smoothCollapse();
                         }
                     } else {//已经展开的
-                        if (getScrollX() < mCloseLimit || (velocityX > 1000 && isInterceptParent)) {
-                            smoothClose();
+                        if (getScrollX() < mCollapseLimit || (velocityX > 1000 && isInterceptParent)) {
+                            smoothCollapse();
                         } else {
                             smoothExpand();
                         }
 
                         if (isClickEvent) {//如果是单击事件
                             if (ev.getX() < getWidth() - getScrollX()) {
-                                smoothClose();
+                                smoothCollapse();
                             } else {
-                                autoClose();
+                                autoCollapse();
                             }
                         }
                     }
@@ -305,15 +305,15 @@ public class SwipeMenuLayout extends ViewGroup {
         return super.dispatchTouchEvent(ev);
     }
 
-    private void autoClose() {
-        switch (AUTO_CLOSE_TYPE) {
-            case AUTO_CLOSE_NONE:
+    private void autoCollapse() {
+        switch (AUTO_COLLAPSE_TYPE) {
+            case AUTO_COLLAPSE_NONE:
                 break;
-            case ATUO_CLOSE_QUICK:
-                quickClose();
+            case ATUO_COLLAPSE_QUICK:
+                collapseInstant();
                 break;
-            case ATUO_CLOSE_SMOOTH:
-                smoothClose();
+            case ATUO_COLLAPSE_SMOOTH:
+                smoothCollapse();
                 break;
         }
     }
@@ -354,7 +354,7 @@ public class SwipeMenuLayout extends ViewGroup {
     /**
      * 平滑展开
      */
-    private ValueAnimator mExpandAnim, mCloseAnim;
+    private ValueAnimator mExpandAnim, mCollapseAnim;
 
     public void smoothExpand() {
         sSwipeMenuLayout = SwipeMenuLayout.this;
@@ -378,39 +378,39 @@ public class SwipeMenuLayout extends ViewGroup {
     }
 
     /**
-     * 每次执行动画之前都应该先取消之前的动画
-     */
-    private void cancelAnim() {
-        if (mCloseAnim != null && mCloseAnim.isRunning()) {
-            mCloseAnim.cancel();
-        }
-        if (mExpandAnim != null && mExpandAnim.isRunning()) {
-            mExpandAnim.cancel();
-        }
-    }
-
-    /**
      * 平滑关闭
      */
-    public void smoothClose() {
+    public void smoothCollapse() {
         sSwipeMenuLayout = null;
         cancelAnim();
 
-        mCloseAnim = ValueAnimator.ofInt(getScrollX(), 0);
-        mCloseAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        mCollapseAnim = ValueAnimator.ofInt(getScrollX(), 0);
+        mCollapseAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 scrollTo((Integer) animation.getAnimatedValue(), 0);
             }
         });
-        mCloseAnim.addListener(new AnimatorListenerAdapter() {
+        mCollapseAnim.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
                 isExpand = false;
             }
         });
-        mCloseAnim.setInterpolator(new AccelerateInterpolator());
-        mCloseAnim.setDuration(closeDuration).start();
+        mCollapseAnim.setInterpolator(new AccelerateInterpolator());
+        mCollapseAnim.setDuration(collapseDuration).start();
+    }
+
+    /**
+     * 每次执行动画之前都应该先取消之前的动画
+     */
+    private void cancelAnim() {
+        if (mCollapseAnim != null && mCollapseAnim.isRunning()) {
+            mCollapseAnim.cancel();
+        }
+        if (mExpandAnim != null && mExpandAnim.isRunning()) {
+            mExpandAnim.cancel();
+        }
     }
 
     private void releaseVelocityTracker() {
@@ -424,19 +424,16 @@ public class SwipeMenuLayout extends ViewGroup {
     @Override
     protected void onDetachedFromWindow() {
         if (this == sSwipeMenuLayout) {
-            sSwipeMenuLayout.smoothClose();
+            sSwipeMenuLayout.smoothCollapse();
             sSwipeMenuLayout = null;
         }
         super.onDetachedFromWindow();
     }
 
     /**
-     * 快速关闭。
-     * 用于 点击侧滑菜单上的选项,同时想让它快速关闭(删除 置顶)。
-     * 这个方法在ListView里是必须调用的，
-     * 在RecyclerView里，视情况而定，如果是mAdapter.notifyItemRemoved(pos)方法不用调用。
+     * 立刻关闭，不显示动画
      */
-    public void quickClose() {
+    public void collapseInstant() {
         if (this == sSwipeMenuLayout) {
             cancelAnim();
             sSwipeMenuLayout.scrollTo(0, 0);
@@ -444,7 +441,31 @@ public class SwipeMenuLayout extends ViewGroup {
         }
     }
 
+    public void setLeftMenu(boolean leftMenu) {
+        isLeftMenu = leftMenu;
+    }
+
     public void setEnableParentLongClick(boolean enableParentLongClick) {
         this.enableParentLongClick = enableParentLongClick;
+    }
+
+    public void setExpandRatio(float expandRatio) {
+        this.expandRatio = expandRatio;
+    }
+
+    public void setCollapseRatio(float collapseRatio) {
+        this.collapseRatio = 1 - collapseRatio;
+    }
+
+    public void setExpandDuration(int expandDuration) {
+        this.expandDuration = expandDuration;
+    }
+
+    public void setCollapseDuration(int collapseDuration) {
+        this.collapseDuration = collapseDuration;
+    }
+
+    public void setAUTO_COLLAPSE_TYPE(int AUTO_COLLAPSE_TYPE) {
+        this.AUTO_COLLAPSE_TYPE = AUTO_COLLAPSE_TYPE;
     }
 }

@@ -5,13 +5,13 @@
         <attr name="enableParentLongClick" format="boolean" />
 
         <attr name="expandRatio" format="float" />
-        <attr name="closeRatio" format="float" />
+        <attr name="collapseRatio" format="float" />
 
-        <attr name="closeDuration" format="integer" />
+        <attr name="collapseDuration" format="integer" />
         <attr name="expandDuration" format="integer" />
 
 
-        <attr name="autoCloseType">
+        <attr name="autoCollapseType">
             <flag name="none" value="0" />
             <flag name="smooth" value="1" />
             <flag name="quick" value="2" />

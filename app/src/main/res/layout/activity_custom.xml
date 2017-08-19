@@ -7,6 +7,7 @@
 
 
     <qdx.swipemenucontainer.SwipeMenuLayout
+        android:id="@+id/swipe_left"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -49,7 +50,7 @@
     <qdx.swipemenucontainer.SwipeMenuLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        qdx:autoCloseType="smooth"
+        qdx:autoCollapseType="smooth"
         qdx:isLeftMenu="false">
 
 

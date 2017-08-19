@@ -82,7 +82,9 @@ expandDuration 	       | integer     		 |菜单展开动画时间
 closeRatio             | float	      	         |菜单能够自动关闭的阈值
 closeDuration          | integer 		 |菜单关闭动画时间
 autoCloseType	       | enum(none,smooth,quick) |点击menu菜单内容（删除，编辑等）自动关闭。
-
+collapseInstant	       | void                    |不显示动画,关闭菜单
+smoothCollapse	       | void                    |平滑关闭菜单
+smoothExpand	       | void                    |平滑打开菜单
 <br/>
 
 

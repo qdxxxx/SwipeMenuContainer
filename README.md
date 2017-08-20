@@ -31,7 +31,7 @@
 ```
 ```
 	dependencies {
- 	   compile 'com.github.qdxxxx:SwipeMenuContainer:v1.0.1'
+ 	   compile 'com.github.qdxxxx:SwipeMenuContainer:v1.0.3'
 	}
 ```
 

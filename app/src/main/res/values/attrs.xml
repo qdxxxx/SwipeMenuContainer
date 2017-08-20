@@ -9,13 +9,5 @@
 
         <attr name="collapseDuration" format="integer" />
         <attr name="expandDuration" format="integer" />
-
-
-        <attr name="autoCollapseType">
-            <flag name="none" value="0" />
-            <flag name="smooth" value="1" />
-            <flag name="quick" value="2" />
-        </attr>
-
     </declare-styleable>
 </resources>

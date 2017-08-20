@@ -10,7 +10,7 @@
  [https://fir.im/6q2m]( https://fir.im/6q2m)
  
  
-  借鉴参考大神的[SwipeDelMenuLayout]( https://github.com/mcxtzhang/SwipeDelMenuLayout)
+  借鉴大神的[SwipeDelMenuLayout]( https://github.com/mcxtzhang/SwipeDelMenuLayout)
 
  
  
@@ -40,8 +40,8 @@
     <qdx.swipemenucontainer.SwipeMenuLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        qdx:isLeftMenu="false"
-        ...
+        qdx:isLeftMenu="false"     //false(右侧是菜单),true(左侧是菜单)    
+       ...
         />
 ```
 <br/>

@@ -40,7 +40,6 @@
     <qdx.swipemenucontainer.SwipeMenuLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        qdx:autoCollapseType="smooth"
         qdx:isLeftMenu="false"
         ...
         />

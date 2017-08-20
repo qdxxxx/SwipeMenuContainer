@@ -81,8 +81,8 @@ expandDuration 	       | integer     		 |菜单展开动画时间
 collapseRatio          | float	      	         |菜单能够自动关闭的阈值
 collapseDuration       | integer 		 |菜单关闭动画时间
 collapseInstant	       | void                    |不显示动画,关闭菜单
-smoothCollapse	       | void                    |平滑关闭菜单
-smoothExpand	       | void                    |平滑打开菜单
+collapseSmooth	       | void                    |平滑关闭菜单
+expandSmooth	       | void                    |平滑打开菜单
 <br/>
 
 

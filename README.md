@@ -79,9 +79,8 @@ isLeftMenu             | boolean  		 |菜单是否在内容左边（如果
 enableParentLongClick  | boolean    		 |允许父类长按（此时内容就会被拦截down事件）                     
 expandRatio            | float   		 |菜单能够自动打开的阈值
 expandDuration 	       | integer     		 |菜单展开动画时间
-collapseRatio             | float	      	         |菜单能够自动关闭的阈值
-collapseDuration          | integer 		 |菜单关闭动画时间
-autoCollapseType	       | enum(none,smooth,quick) |点击menu菜单内容（删除，编辑等）自动关闭。
+collapseRatio          | float	      	         |菜单能够自动关闭的阈值
+collapseDuration       | integer 		 |菜单关闭动画时间
 collapseInstant	       | void                    |不显示动画,关闭菜单
 smoothCollapse	       | void                    |平滑关闭菜单
 smoothExpand	       | void                    |平滑打开菜单

@@ -9,12 +9,6 @@
  ### Download
  [https://fir.im/6q2m]( https://fir.im/6q2m)
  
- 
-  借鉴[SwipeDelMenuLayout]( https://github.com/mcxtzhang/SwipeDelMenuLayout)
-
- 
- 
- 
   ---
 ### 集成方式
 
@@ -86,6 +80,10 @@ expandSmooth	       | void                    |平滑打开菜单
 <br/>
 
 
+### THANKS
+---
+  借鉴[SwipeDelMenuLayout]( https://github.com/mcxtzhang/SwipeDelMenuLayout)
+  超强的[BaseRecyclerViewAdapterHelper]
 
 
 ###  License

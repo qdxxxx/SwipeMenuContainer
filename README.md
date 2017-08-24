@@ -83,7 +83,8 @@ expandSmooth	       | void                    |平滑打开菜单
 ### THANKS
 ---
   借鉴[SwipeDelMenuLayout]( https://github.com/mcxtzhang/SwipeDelMenuLayout)
-  超强的[BaseRecyclerViewAdapterHelper]
+  
+  超强的[BaseRecyclerViewAdapterHelper]( https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 
 
 ###  License

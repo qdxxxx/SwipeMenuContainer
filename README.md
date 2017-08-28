@@ -87,6 +87,13 @@ expandSmooth	       | void                    |平滑打开菜单
   超强的[BaseRecyclerViewAdapterHelper]( https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 
 
+### Artical
+---
+
+博客详解文章[http://blog.csdn.net/qian520ao/article/details/77587904](http://blog.csdn.net/qian520ao/article/details/77587904)
+
+
+
 ###  License
 ---
 

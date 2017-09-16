@@ -1,6 +1,7 @@
 # SwipeMenuContainer
 [![](https://www.jitpack.io/v/qdxxxx/SwipeMenuContainer.svg)](https://www.jitpack.io/#qdxxxx/SwipeMenuContainer)
 [![](https://badge.juejin.im/entry/59a97b39f265da24722fe004/likes.svg?style=flat)](https://juejin.im/user/57028e8f2e958a0059237a6b)
+<br/>
 仿QQ向左滑动弹出菜单的布局.
 
  ![image](https://github.com/qdxxxx/SwipeMenuContainer/blob/master/appGif/demo.gif)
